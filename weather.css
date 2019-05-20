@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+}
+
+#main_frame {
+    height: 90vh;
+    background-size: cover;
+    background-image: url("img/bgimage/hare.jpg")
+}
+
+/************************************
+** CSSでタブ表示
+************************************/
+/* タブの外枠 */
+.tabs {
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* タブのスタイル */
+.tabs .tab-label {
+    display: inline-block;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: 1px solid #999;
+    /* background-color: #f3f3f3; */
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 3px 6px;
+    border-bottom: none;
+    font-size: 22px;
+    width: 12vh;
+    color: ghostwhite;
+}
+
+/* タブにマウスカーソルがのったときフッター */
+.tabs .tab-label:hover {
+    opacity: 0.7;
+}
+
+/* ラジオボタンと内容を非表示 */
+.tabs input[name="tab-radio"],
+.tabs .tab-content {
+    display: none;
+}
+
+/* タブ内容のスタイル */
+.tabs .tab-content {
+    /* border: 1px solid #999; */
+    padding: 8px 0px 0px 0px;
+    /* min-height: 200px; */
+    height: 74vh;
+}
+
+
+/* 選択されているタブのコンテンツのみを表示 */
+.tabs #tab-1:checked~.tab-1-content,
+.tabs #tab-2:checked~.tab-2-content,
+.tabs #tab-3:checked~.tab-3-content,
+.tabs #tab-4:checked~.tab-4-content,
+.tabs #tab-5:checked~.tab-5-content {
+    display: block;
+}
+
+/* 選択されているタブのスタイルを変える */
+.tabs input[name="tab-radio"]:checked+.tab-label {
+    background-color: black;
+}
+
+/* タブ内の画像 */
+.tabs img {
+    height: 35%;
+    margin: 3% 0;
+}
+
+/* メインフレーム下部分 */
+
+.humidity {
+    width: 100%;
+    /* height: 25%; */
+    /* border: 0.5px solid black; */
+    font-size: 1.6em;
+    color: ghostwhite;
+}
+
+.max {
+    width: 33%;
+    /* height: 50%; */
+    /* border: 0.5px solid black; */
+    float: left;
+    font-size: 1.6em;
+    color: red;
+}
+
+
+.max p {
+    font-size: 1.6em;
+    color: red;
+}
+
+.now {
+    width: 33%;
+    /* height: 50%; */
+    /* border: 0.5px solid black; */
+    float: left;
+    font-size: 1.6em;
+    color: ghostwhite;
+}
+
+.now p {
+    font-size: 1.6em;
+    color: ghostwhite;
+}
+
+.min {
+    width: 33%;
+    /* height: 50%; */
+    /* border: 0.5px solid black; */
+    float: left;
+    font-size: 1.6em;
+    color: blue;
+}
+
+.min p{ 
+    font-size: 1.6em;
+    color: blue;
+}
+
+#address {
+    font-size: 20px;
+}
+
+#nowaddress {
+    font-size: 32px;
+    height: 4vh;
+}
+
+/* .tab_content.img{
+    height : auto;
+    width : 214px;
+} */
+
+/* #address {
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+} */
+
+option {
+    background-color: transparent;
+}
+
+.location {
+    font-size: 1.6em;
+    color: white;
+}
+
+/* 背景透過色 */
+.bgcolor {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 243px;
+    margin: 0 3%;
+}
+
+/* 今日の３時間毎の天気 */
+
+.tdy_oc_weather {
+    width: 100%;
+    height: 28%;
+    float: left;
+    font-size: 15px;
+}
+
+.tdy_oc {
+    width: 11.3%;
+    height: 100%;
+    margin: 0px 0.5% 0px 0.5%;
+    float: left;
+}
+
+.tdy_hour {
+    height: 25%;
+    color: ghostwhite;
+}
+
+.tdy_weat {
+    height: 50%;
+}
+
+.tdy_oc_max {
+    height: 25%;
+    color: ghostwhite;
+}
+
+.tdy_weat img {
+    height: 80%;
+}
+
+/* 明日明後日のcss */
+.weat_oc {
+    float: left;
+    height: 24%;
+    width: 40%;
+    margin: 0% 5% 1% 5%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.left {
+    float: clear;
+}
+
+.hour {
+    color: ghostwhite;
+    height: 20%;
+}
+
+.weat_img {
+    height: 60%;
+}
+
+.weat_img img {
+    height: 80%;
+}
+
+.weat_max {
+    height: 20%;
+    color: ghostwhite;
+}
