@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Top</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+
+<body>
+    <div id="header">
+        <a href="main.html">
+            <div id="top_title"><img src="../img/top_title.jpg" alt="top_title"></div>
+        </a>
+        <div id="lunguage">
+            <form action="">
+                <select name="language" id="language">
+                    <option value="0">日本語</option>
+                    <option value="1">english</option>
+                    <option value="2">中文</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <img src="../img/top_img1.jpg" alt="">
+
+
+
+        <div id="tophoto" class="menu">
+            <img src="../img/icon/camera_icon.png" alt="camera_icon">
+            <p id="phototext"></p>
+            <input type="file" name="upfile" id="upfile" accept="image/*" style="display:none;" />
+            <script>
+                // window.onload = function(){
+                //     localStorage.clear;
+                // };
+                document.querySelector("#tophoto").onclick = function (e) {
+                    document.querySelector("#upfile").click();
+                }
+                document.querySelector("#upfile").onchange = function (e) {
+                    console.log(e);
+                }
+
+                $(function () {
+                    $('#upfile').on("change", function () {
+                        var file = this.files[0];
+
+                        if (file != null) {
+                            // console.log(file.name); // ファイル名をログに出力する
+                            let reader = new FileReader();
+                            reader.readAsDataURL(file);
+                            reader.addEventListener("load", function () {
+                                // console.log(reader.result)
+                                // alert(reader.result.split("base64,")[1].length)
+                                $.ajax({
+                                    method: 'POST',
+                                    // url: "http://10.17.4.86:3020/fileResult",
+                                    // url: "http://10.17.3.190:3020/fileResult",
+                                    url: "http://192.168.235.1:3020/fileResult",
+                                    data: {
+                                        fileResult: reader.result.split("base64,")[1]
+                                    },
+                                    success: function (result) {
+                                        let a = result.result
+                                        window.localStorage.setItem('kekka', a);
+                                        location.href = "result.html";
+                                    }
+                                });
+                            }, false);
+
+                            // base64 encode
+                            // const fileResult = reader.result;
+                            // console.log(fileResult);
+                            // var fData = new FormData();
+                            // fData.append('img', fileResult)
+                            // $.ajax({
+                            //     url: `http://localhost:3020/${fileResult}`,
+                            //     type: 'POST',
+                            //     data: fData,
+                            //     contentType: false,
+                            //     processData: false
+                            // });
+
+                        }
+
+                    });
+                });
+            </script>
+
+        </div>
+
+        <a href="library.html">
+            <div id="library" class="menu">
+                <img src="../img/icon/book_icon.png" alt="book_icon">
+                <p id="librarytext"></p>
+            </div>
+        </a>
+        <a href="weather.html">
+            <div id="weather" class="menu">
+                <img src="../img/icon/weather_icon.png" alt="weather_icon">
+                <p id="weathertext"></p>
+            </div>
+        </a>
+        <a href="how_to.html">
+            <div id="howtouse" class="menu">
+                <img src="../img/icon/question_icon.png" alt="question_icon">
+                <p id="how_totext"></p>
+            </div>
+        </a>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var i = Math.floor(Math.random() * 3) + 1;
+            var imgsrc = `../img/top_img${i}.jpg`
+            $('#footer').children('img').attr('src', imgsrc);
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

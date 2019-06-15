@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+}
+
+#header {
+    /* position: fixed; */
+    top: 0;
+    height: 10vh;
+    width: 100%;
+    background-color:white;
+    color: white;
+    font-size: 150%;
+}
+
+#top_title {
+    float: left;
+    height: 6vh;
+    margin: 0;
+    width: auto;
+    background-image: url("../img/top_title.jpg");
+}
+
+#top_title img {
+    height: 10vh;
+    width: auto;
+}
+
+#language {
+    float: right;
+    margin-top: 5%;
+    width: 22%;
+    font-size: 18px;
+    /* ここから追記 */
+    overflow: hidden;
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+    background-color: deepskyblue;
+    color : white;
+}
+#language select {
+    background: transparent;
+    border: none;
+    /* font-size: 18px; */
+    /* height: 29px; */
+    /* padding: 5px; If you add too much padding here, the options won't show in IE */
+    width: 22%;
+    color: #fff;
+ }

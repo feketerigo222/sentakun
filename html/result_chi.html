@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>result</title>
+    <link rel="stylesheet" href="../css/result.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+
+<body>
+    <div id="header">
+        <a href="main_chi.html">
+            <div id="top_title"><img src="../img/top_title.jpg" alt="top_title"></div>
+        </a>
+        <div id="lunguage">
+            <form action="">
+                <select name="language" id="language" onChange="location.href=value;">
+                    <option value="result.html">日本語</option>
+                    <option value="result_eng.html">english</option>
+                    <option value="result_chi.html" selected>中文</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="result">
+            <p>~识别的结果~</p>
+            <div class="result_box">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div id="description">
+            <p></p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/result_chi.js"></script>    
+</body>
+
+</html>
